@@ -4,7 +4,7 @@ from os import system, name
 # Polyatomic ions with simplified formulas and charges
 polyatomic_ions = {
     "Acetate": {"formula": "C2H3O2", "charge": -1},
-    "Ammonium": {"formula": "NH4", "charge": +1},
+    "Ammonium": {"formula": "NH4", "charge": 1},
     "Bicarbonate": {"formula": "HCO3", "charge": -1},
     "Carbonate": {"formula": "CO3", "charge": -2},
     "Hydroxide": {"formula": "OH", "charge": -1},
@@ -38,13 +38,13 @@ def polyatomic_quiz():
 
         # Ask for the charge
         while True:
-            answer_charge = input(f"What is the charge of {ion_name}? ").strip()
+            answer_charge = input(f"What is the charge of {ion_name}? (Include + or - sign) ").strip()
             try:
                 answer_charge = int(answer_charge)
             except ValueError:
                 print("Invalid input, please enter a number for the charge.")
                 continue
-            
+
             if answer_charge == ion_info["charge"]:
                 print("Correct charge!")
                 break  # Exit the loop if the answer is correct
@@ -55,3 +55,4 @@ def polyatomic_quiz():
 
 # Run the quiz
 polyatomic_quiz()
+
